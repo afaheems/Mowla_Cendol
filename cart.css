@@ -10,7 +10,18 @@ body {
         font-weight: 400;
         background-size: cover;
 }
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 768px) {
+    .cart-section {
+        flex-direction: column; /* Stack the sections vertically */
+    }
+
+    .summary {
+        order: 2; /* Place the summary below the shopping cart */
+    }
+
+    .shopping-cart {
+        order: 1; /* Place the shopping cart above the summary */
+    }
 }
 .navbar {
     display: flex;
