@@ -33,7 +33,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     }
 
     alert("Login successful!");
-    window.location = "/Projek/homepage/HomePageMowlaCendol.html";
+    window.location = "HomePageMowlaCendol.html";
 });
 
 document.getElementById("signup-form").addEventListener("submit", function(event) {
