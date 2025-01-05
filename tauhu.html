@@ -153,21 +153,21 @@
         
             <div class="navbar">
             <div class="logo">
-              <a href="/Projek/homepage/HomePageMowlaCendol.html">
+              <a href="HomePageMowlaCendol.html">
                 <img src="https://www.shutterstock.com/image-vector/ais-kacang-bean-ice-flat-600nw-2224640565.jpg" alt="Logo">
               </a>
             </div>
             <form class="search-bar" id="searchForm" onsubmit="handleSearch(event)">
               <input type="text" id="searchBar" class="form-control" placeholder="Search your favourite meal here!" autocomplete="off">
-              <img src="/Projek/cartpage/salam.png" alt="Salam Image" style="display: flex; margin: 0 auto; width: 200px; height: auto;">
+              <img src="salam.png" alt="Salam Image" style="display: flex; margin: 0 auto; width: 200px; height: auto;">
         </form>
             <div class="menu-links">
-            <a href="/Projek/homepage/HomePageMowlaCendol.html">Home</a>
-            <a href="/Projek/aboutpage/aboutpage.html">About</a>
-            <a href="/Projek/menupage/menupage.html">Menu</a>
-            <a href="/Projek/contactpage/contactpage.html">Contact</a>
+            <a href="HomePageMowlaCendol.html">Home</a>
+            <a href="aboutpage.html">About</a>
+            <a href="menupage.html">Menu</a>
+            <a href="contactpage.html">Contact</a>
             </div>
-            <a href="/Projek/cartpage/cart.html" class="cart-button">Your Cart</a>
+            <a href="cart.html" class="cart-button">Your Cart</a>
         </div>
     </header>
 
@@ -229,7 +229,7 @@
               localStorage.setItem('cart', JSON.stringify(cart));
               alert(`${item.name} added to cart!`);
 
-              if (window.location.pathname.includes('/Projek/cartpage/cart.html')) {
+              if (window.location.pathname.includes('cart.html')) {
             renderCart(); // Call your function to render the cart
             }
           });
@@ -281,7 +281,7 @@
             searchTerm == "cendol jagung" ||
             searchTerm == "cendol mangga") {
         // Redirect to the Cendol page
-        window.location.href = "/Projek/menupage/cendol.html"; // Change to the actual Cendol page URL
+        window.location.href = "cendol.html"; // Change to the actual Cendol page URL
       }
       else if ( searchTerm == "ais kepal myvic" ||
                 searchTerm == "ais kepal" ||
@@ -289,14 +289,14 @@
                 searchTerm == "abc"
       )
       {
-        window.location.href = "/Projek/menupage/aiskepal.html"; // Change to the actual Ais Kepal page URL
+        window.location.href = "aiskepal.html"; // Change to the actual Ais Kepal page URL
       }
       else if ( searchTerm == "laksa biasa" ||
                 searchTerm == "laksa telur sarang"||
                 searchTerm == "laksa"
       )
       {
-        window.location.href = "/Projek/menupage/laksa.html"; // Change to the actual Laksa page URL
+        window.location.href = "laksa.html"; // Change to the actual Laksa page URL
       } 
       else if ( searchTerm == "bihun sup biasa" ||
                 searchTerm == "bihun sup" ||
@@ -304,7 +304,7 @@
                 searchTerm == "bihun sup meatball"
       )
       {
-        window.location.href = "/Projek/menupage/sup.html"; // Change to the actual Sup page URL
+        window.location.href = "sup.html"; // Change to the actual Sup page URL
       } 
       else if ( searchTerm == "mee kari biasa" ||
                 searchTerm == "mee kari" ||
@@ -313,13 +313,13 @@
                 searchTerm == "mee kari kerang"
       )
       {
-        window.location.href = "/Projek/menupage/mee.html"; // Change to the actual Mee page URL
+        window.location.href = "mee.html"; // Change to the actual Mee page URL
       } else if(searchTerm == "tauhu bakar" ||
                 searchTerm == "tauhu bakar cheese"||
                 searchTerm == "tauhu"
       )
       {
-        window.location.href = "/Projek/menupage/tauhu.html"; // Change to the actual Cendol page URL
+        window.location.href = "tauhu.html"; // Change to the actual Cendol page URL
       }
       else {
         alert("Item not found. Please try another search term.");
