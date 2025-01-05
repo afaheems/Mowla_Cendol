@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+     <!-- Include Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+     <!-- Custom CSS -->
+     <link rel="stylesheet" href="homepage.css">
+     
+     <!-- Include Bootstrap JS (needed for the Bootstrap components) -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+     <!-- Include jQuery -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+     <!-- Include jQuery UI (for autocomplete functionality) -->
+     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+     
+    <style>
+        body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FFFBCA;
+      background-image: url('//insidescoop.com.my/cdn/shop/files/Curve_1.png?v=1721909851');
+      background-color: #FFFBCA;
+      color: #000000;
+      opacity: 0.88;
+        font-family: "Overpass", sans-serif;
+        font-weight: 400;
+        background-size: cover;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fff7e8;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0; /* Make the navbar stick to the top of the page */
+      z-index: 1000; /* Ensure the navbar stays on top of other content */
+    }
+    .navbar .logo img {
+      height: 40px;
+    }
+    .navbar .search-bar {
+      flex-grow: 1;
+      margin: 0 20px;
+      display: flex;
+      align-items: center;
+    }
+    .navbar .search-bar input {
+      width: 300px; 
+      height: 35px; 
+      padding: 5px 15px;
+      border: 1px solid #ddd;
+      border-radius: 20px; 
+      font-size: 14px;
+      outline: none;
+    }
+    .navbar .menu-links {
+      display: flex;
+      gap: 15px;
+    }
+    .navbar .menu-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .navbar .menu-links a:hover {
+      background-color: #f0f0f0;
+    }
+    .navbar .cart-button {
+      background-color: #333;
+      color: #fff;
+      padding: 5px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .navbar .cart-button:hover {
+      background-color: #555;
+    }
+        footer {
+            background-color: #2E2F35;
+            padding: auto;
+            color: #F9F7F3;
+            text-align: center;
+            font-size: 14px;
+            border-radius: 25px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+        .menu {
+            padding: 20px;
+            text-align: center;
+        }
+        .center {
+            font-weight: 350;
+            font-size: 16px;
+            border: none;
+            margin: auto;
+            max-width: 80%;
+        }
+        .our-story {
+            text-align: center;
+            margin: 30px auto;
+            max-width: 70%;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #FFFBCA;
+            border: 2px solid #575757;
+            border-radius: 25px;
+        }
+        .sidebar {
+            max-width: 45%;
+            background-color: #FFFBCA;
+            padding: 20px;
+            border: 2px solid #575757;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .main-content {
+            max-width: 50%;
+        }
+        .main-content h2 {
+            font-size: 1.5em;
+            color: #333;
+        }
+        .sidebar h2 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .operation-hours {
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .operation-hours p {
+            margin: 5px 0;
+        }
+
+        .operation-hours strong {
+            font-weight: bold;
+            color: #1A1A1A;
+        }
+
+        .headers {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff7e8;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            padding: 10px 0;
+        }
+        .containers {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .logo img {
+            max-width: 90px;
+            height: auto;
+        }
+        .nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .nav li {
+            margin-right: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            margin: 20px auto;
+            max-width: 80%;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .carousel img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .testimonial {
+            background-color: #F9F7F3;
+            padding: 20px;
+            margin: 30px auto;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 70%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        /* jQuery UI Autocomplete Dropdown Styling */
+        .ui-autocomplete {
+                background-color: #f8f9fa; /* Background color */
+                border-radius: 5px; /* Rounded corners */
+                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Drop shadow */
+                border: 1px solid #ddd; /* Light border */
+                max-height: 100px; /* Limit height */
+                max-width: 350px;
+                overflow-y: auto; /* Scroll if the list is too long */
+            }
+
+            .ui-menu-item {
+                padding: 8px 15px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .ui-menu-item:hover {
+                background-color: #007bff;
+                color: #fff;
+            }
+
+            .ui-autocomplete li {
+                list-style: none;
+            }
+
+            .ui-autocomplete {
+                z-index: 1000 !important;
+            }
+    </style>
+</head>
+<body>
+    <body>
+        <div class="navbar">
+        <div class="logo">
+            <a href="/Projek/homepage/HomePageMowlaCendol.html">
+                <img src="https://www.shutterstock.com/image-vector/ais-kacang-bean-ice-flat-600nw-2224640565.jpg" alt="Logo">
+              </a>
+        </div>
+        <form class="search-bar" id="searchForm" onsubmit="handleSearch(event)">
+            <input type="text" id="searchBar" class="form-control" placeholder="Search your favourite meal here!" autocomplete="off">
+            <img src="/Projek/cartpage/salam.png" alt="Salam Image" style="display: flex; margin: 0 auto; width: 200px; height: auto;">
+      </form>
+
+        <div class="menu-links">
+        <a href="/Projek/homepage/HomePageMowlaCendol.html">Home</a>
+        <a href="/Projek/aboutpage/aboutpage.html">About</a>
+        <a href="/Projek/menupage/menupage.html">Menu</a>
+        <a href="/Projek/contactpage/contactpage.html">Contact</a>
+        </div>
+        <a href="/Projek/cartpage/cart.html" class="cart-button">Your Cart</a>
+    </div>
+    </body>
+        
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom Script -->
+    <script>
+        $(document).ready(function () {
+            // Data for autocomplete
+            const suggestions = [
+                "Cendol Biasa",
+                "Cendol Kacang",
+                "Cendol Cincau",
+                "Cendol Pulut",
+                "Cendol Jagung",
+                "Cendol Mangga",
+                "Add On",
+                "Ais Kepal Myvic",
+                "Lay Chee Kang",
+                "ABC",
+                "Laksa Biasa",
+                "Laksa Telur Sarang",
+                "Bihun Sup Biasa",
+                "Bihun Sup Meatball",
+                "Mee Kari Biasa",
+                "Mee Kari Ayam",
+                "Mee Kari Kerang"
+            ];
+
+            // jQuery UI autocomplete
+            $("#searchBar").autocomplete({
+                source: suggestions
+            });
+        });
+
+    function handleSearch(event) {
+      event.preventDefault(); // Prevent page reload
+
+      const searchTerm = document.getElementById("searchBar").value.trim().toLowerCase();
+
+      // Check if the search term matches 'cendol biasa'
+      if (  searchTerm == "cendol" || 
+            searchTerm == "cendol biasa" || 
+            searchTerm == "cendol kacang" || 
+            searchTerm == "cendol cincau" || 
+            searchTerm == "cendol pulut" || 
+            searchTerm == "cendol jagung" ||
+            searchTerm == "cendol mangga") {
+        // Redirect to the Cendol page
+        window.location.href = "/Projek/menupage/cendol.html"; // Change to the actual Cendol page URL
+      }
+      else if ( searchTerm == "ais kepal myvic" ||
+                searchTerm == "ais kepal" ||
+                searchTerm == "lay chee kang" ||
+                searchTerm == "abc"
+      )
+      {
+        window.location.href = "/Projek/menupage/aiskepal.html"; // Change to the actual Cendol page URL
+      }
+      else if ( searchTerm == "laksa biasa" ||
+                searchTerm == "laksa telur sarang"||
+                searchTerm == "laksa"
+      )
+      {
+        window.location.href = "/Projek/menupage/laksa.html"; // Change to the actual Cendol page URL
+      } 
+      else if ( searchTerm == "bihun sup biasa" ||
+                searchTerm == "bihun sup" ||
+                searchTerm == "bihun" ||
+                searchTerm == "bihun sup meatball"
+      )
+      {
+        window.location.href = "/Projek/menupage/sup.html"; // Change to the actual Cendol page URL
+      } 
+      else if ( searchTerm == "mee kari biasa" ||
+                searchTerm == "mee kari" ||
+                searchTerm == "mee" ||
+                searchTerm == "mee kari ayam" ||
+                searchTerm == "mee kari kerang"
+      )
+      {
+        window.location.href = "/Projek/menupage/mee.html"; // Change to the actual Cendol page URL
+      } 
+      else {
+        alert("Item not found. Please try another search term.");
+      }
+    }
+    </script>
+    
+    <div class="menu">
+        <p><strong>Discover a World of Refreshing Treats</strong></p>
+        <p>Escape the heat and tantalize your taste buds with our delectable selection of traditional Malaysian desserts. At Mowla Cendol, we proudly serve a variety of icy delights, each crafted with the finest ingredients and served with a smile.</p>
+        <div class="center">
+            <p><strong>A Taste of Heritage: Mowla Cendol's Cendol Haven</strong></p>
+            <p>Mowla Cendol isn't just a name; it's a legacy. Rooted in the heart of Gombak, our humble stall has been serving up bowls of nostalgia, one spoonful at a time. For generations, we've been crafting the perfect cendol, a timeless dessert that has captured the hearts of locals and visitors alike.</p>
+        </div>
+    </div>
+
+    <div class="carousel">
+        <img src="https://img.freepik.com/premium-photo/ais-kacang-cendol-ice-kacang-literally-meaning-bean-ice-also-commonly-known-as-abc-is-malaysian-dessert_511235-8489.jpg?w=360" alt="Cendol">
+        <img src="https://www.ajinomotofoodbizpartner.com.my/wp-content/uploads/2023/09/Curry-Mee-thumbnail-03.jpg" alt="Curry Mee">
+        <img src="https://images.deliveryhero.io/image/foodpanda/recipes/asam-laksa-recipe-1.jpg" alt="Asam Laksa">
+    </div>
+
+    <div class="our-story">
+        <h2>Our Story</h2>
+        <p>Our journey began with Mowla, a skilled artisan who perfected the art of making cendol. Passed down through generations, this secret recipe has been cherished and refined, ensuring that every bowl is a testament to tradition. Our family's passion for sharing this delightful dessert has driven us to open our own stall, where we continue to honor our heritage.</p>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Operation Hours</h2>
+            <div class="operation-hours">
+                <p><strong>Monday - Saturday:</strong> 1300hrs - 2200hrs</p>
+                <p><strong>Sunday:</strong> Closed</p>
+            </div>
+        </div>
+        <div class="main-content">
+            <h2>Our Signature Desserts:</h2>
+            <ul>
+                <li><strong>Cendol:</strong> A classic Malaysian dessert featuring silky smooth green rice flour jelly, coconut milk, palm sugar syrup, and red bean.</li>
+                <li><strong>Ais Kacang:</strong> A colorful and refreshing dessert with shaved ice, red beans, sweet corn, jellies, and a drizzle of condensed milk and syrup.</li>
+                <li><strong>ABC:</strong> A hearty dessert with a mix of shaved ice, red beans, sweet corn, jellies, sago pearls, and a generous scoop of ice cream.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="testimonial">
+        <h2>What Our Customers Say</h2>
+        <p>"The best cendol I've ever had! The flavors are amazing, and the staff is so friendly. Highly recommend!" - Danish M.</p>
+        <p>"A must-visit spot for anyone in Gombak. The desserts are heavenly!" - Faris L.</p>
+    </div>
+
+    <footer>
+        <p>No.5, Medan Seri Selera MPS Sg. Pusu, Jalan Sg. Pusu, Kampong Gombak Utara, Kuala Lumpur, Malaysia<br>
+        +60 16-9074 534<br>
+        IG & FB: MOWLA Cendol <br>
+        SSM 002664051-A</p>
+        <p>© 2024 Mowla Cendol. All Rights Reserved.</p>
+        <div>
+            <a href="https://www.facebook.com/mowlacendol" class="tap-area" target="_blank" rel="noopener" aria-label="Follow on Facebook">
+                <svg role="presentation" focusable="false" width="27" height="27" class="icon icon-facebook" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.183 21.85v-8.868H7.2V9.526h2.983V6.982a4.17 4.17 0 0 1 4.44-4.572 22.33 22.33 0 0 1 2.667.144v3.084h-1.83a1.44 1.44 0 0 0-1.713 1.68v2.208h3.423l-.447 3.456h-2.97v8.868h-3.57Z" fill="white">
+                    </path>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/mowlacendol/" class="tap-area" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+              <svg role="presentation" focusable="false" width="27" height="27" class="icon icon-instagram" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.4c-2.607 0-2.934.011-3.958.058-1.022.046-1.72.209-2.33.446a4.705 4.705 0 0 0-1.7 1.107 4.706 4.706 0 0 0-1.108 1.7c-.237.611-.4 1.31-.446 2.331C2.41 9.066 2.4 9.392 2.4 12c0 2.607.011 2.934.058 3.958.046 1.022.209 1.72.446 2.33a4.706 4.706 0 0 0 1.107 1.7c.534.535 1.07.863 1.7 1.108.611.237 1.309.4 2.33.446 1.025.047 1.352.058 3.959.058s2.934-.011 3.958-.058c1.022-.046 1.72-.209 2.33-.446a4.706 4.706 0 0 0 1.7-1.107 4.706 4.706 0 0 0 1.108-1.7c.237-.611.4-1.31.446-2.33.047-1.025.058-1.352.058-3.959s-.011-2.934-.058-3.958c-.047-1.022-.209-1.72-.446-2.33a4.706 4.706 0 0 0-1.107-1.7 4.705 4.705 0 0 0-1.7-1.108c-.611-.237-1.31-.4-2.331-.446C14.934 2.41 14.608 2.4 12 2.4Zm0 1.73c2.563 0 2.867.01 3.88.056.935.042 1.443.199 1.782.33.448.174.768.382 1.104.718.336.336.544.656.718 1.104.131.338.287.847.33 1.783.046 1.012.056 1.316.056 3.879 0 2.563-.01 2.867-.056 3.88-.043.935-.199 1.444-.33 1.782a2.974 2.974 0 0 1-.719 1.104 2.974 2.974 0 0 1-1.103.718c-.339.131-.847.288-1.783.33-1.012.046-1.316.056-3.88.056-2.563 0-2.866-.01-3.878-.056-.936-.042-1.445-.199-1.783-.33a2.974 2.974 0 0 1-1.104-.718 2.974 2.974 0 0 1-.718-1.104c-.131-.338-.288-.847-.33-1.783-.047-1.012-.056-1.316-.056-3.879 0-2.563.01-2.867.056-3.88.042-.935.199-1.443.33-1.782.174-.448.382-.768.718-1.104a2.974 2.974 0 0 1 1.104-.718c.338-.131.847-.288 1.783-.33C9.133 4.14 9.437 4.13 12 4.13Zm0 11.07a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4Zm0-8.13a4.93 4.93 0 1 0 0 9.86 4.93 4.93 0 0 0 0-9.86Zm6.276-.194a1.152 1.152 0 1 1-2.304 0 1.152 1.152 0 0 1 2.304 0Z" fill="white">
+                </path>
+              </svg> 
+            </a>    
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Mowla</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="contactpage.css">
+    <script defer src="contactpage.js"></script>
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="/Projek/homepage/HomePageMowlaCendol.html">
+                <img src="https://www.shutterstock.com/image-vector/ais-kacang-bean-ice-flat-600nw-2224640565.jpg" alt="Logo">
+              </a>
+        </div>
+        <form class="search-bar" id="searchForm" onsubmit="handleSearch(event)">
+            <input type="text" id="searchBar" class="form-control" placeholder="Search your favourite meal here!" autocomplete="off">
+            <img src="/Projek/cartpage/salam.png" alt="Salam Image" style="display: flex; margin: 0 auto; width: 200px; height: auto;">
+      </form>
+        <div class="menu-links">
+        <a href="/Projek/homepage/HomePageMowlaCendol.html">Home</a>
+        <a href="/Projek/aboutpage/aboutpage.html">About</a>
+        <a href="/Projek/menupage/menupage.html">Menu</a>
+        <a href="/Projek/contactpage/contactpage.html">Contact</a>
+        </div>
+        <a href="/Projek/cartpage/cart.html" class="cart-button">Your Cart</a>
+    </div>
+    <div class="header">
+        <h1>Contact MOWLA</h1>
+    </div>
+
+    <div class="container">
+        <div class="about-us">
+            <p>The delight of authentic village-style Cendol, guaranteed to be free from any hipster elements, promises to leave customers in awe with every sip, bringing a sense of nostalgia with each taste of MOWLA!</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>CONTACT US</h3>
+                <p><strong>Phone:</strong> 016-907 4534</p>
+                <p><strong>Email:</strong> mowlacendol@gmail.com</p>
+                <p><strong>Instagram:</strong> mowlacendol</p>
+                <p><strong>Facebook:</strong> MOWLA Cendol</p>
+            </div>
+        </div>
+
+        <div class="Our Restaurant">
+            <h3>Headquarters</h3>
+            <p><strong>Location:</strong> Gombak, Kuala Lumpur</p>
+            <p>No. 5, Jalan Unikl BMI, Seri Selera MPS, Jln Sungai Pusu, Gombak, 53100, Wilayah Persekutuan Kuala Lumpur, Malaysia</p>
+            
+                <input id="pac-input" type="text" placeholder="Search for Mowla Cendol">
+                <div id="map"></div>
+            
+                <!-- Load the Google Maps JavaScript API with the Places library -->
+            
+                <script async defer
+                src="https://maps.gomaps.pro/maps/api/js?key=AlzaSyWDWn0vYushaSLqD0Xqp6cVh2rOzI5LldU&libraries=geometry,places&callback=initMap">
+                </script>
+                <!-- <script async defer
+                src="./gogleplaces2.js">
+            </script> -->
+ 
+        </div>
+        <footer>
+            <p>No.5, Medan Seri Selera MPS Sg. Pusu, Jalan Sg. Pusu, Kampong Gombak Utara, Kuala Lumpur, Malaysia<br>
+            +60 16-9074 534<br>
+            IG & FB: MOWLA Cendol <br>
+            SSM 002664051-A</p>
+            <p>© 2024 Mowla Cendol. All Rights Reserved.</p>
+            <div>
+                <a href="https://www.facebook.com/mowlacendol" class="tap-area" target="_blank" rel="noopener" aria-label="Follow on Facebook">
+                    <svg role="presentation" focusable="false" width="27" height="27" class="icon icon-facebook" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.183 21.85v-8.868H7.2V9.526h2.983V6.982a4.17 4.17 0 0 1 4.44-4.572 22.33 22.33 0 0 1 2.667.144v3.084h-1.83a1.44 1.44 0 0 0-1.713 1.68v2.208h3.423l-.447 3.456h-2.97v8.868h-3.57Z" fill="white">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/mowlacendol/" class="tap-area" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+                  <svg role="presentation" focusable="false" width="27" height="27" class="icon icon-instagram" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.4c-2.607 0-2.934.011-3.958.058-1.022.046-1.72.209-2.33.446a4.705 4.705 0 0 0-1.7 1.107 4.706 4.706 0 0 0-1.108 1.7c-.237.611-.4 1.31-.446 2.331C2.41 9.066 2.4 9.392 2.4 12c0 2.607.011 2.934.058 3.958.046 1.022.209 1.72.446 2.33a4.706 4.706 0 0 0 1.107 1.7c.534.535 1.07.863 1.7 1.108.611.237 1.309.4 2.33.446 1.025.047 1.352.058 3.959.058s2.934-.011 3.958-.058c1.022-.046 1.72-.209 2.33-.446a4.706 4.706 0 0 0 1.7-1.107 4.706 4.706 0 0 0 1.108-1.7c.237-.611.4-1.31.446-2.33.047-1.025.058-1.352.058-3.959s-.011-2.934-.058-3.958c-.047-1.022-.209-1.72-.446-2.33a4.706 4.706 0 0 0-1.107-1.7 4.705 4.705 0 0 0-1.7-1.108c-.611-.237-1.31-.4-2.331-.446C14.934 2.41 14.608 2.4 12 2.4Zm0 1.73c2.563 0 2.867.01 3.88.056.935.042 1.443.199 1.782.33.448.174.768.382 1.104.718.336.336.544.656.718 1.104.131.338.287.847.33 1.783.046 1.012.056 1.316.056 3.879 0 2.563-.01 2.867-.056 3.88-.043.935-.199 1.444-.33 1.782a2.974 2.974 0 0 1-.719 1.104 2.974 2.974 0 0 1-1.103.718c-.339.131-.847.288-1.783.33-1.012.046-1.316.056-3.88.056-2.563 0-2.866-.01-3.878-.056-.936-.042-1.445-.199-1.783-.33a2.974 2.974 0 0 1-1.104-.718 2.974 2.974 0 0 1-.718-1.104c-.131-.338-.288-.847-.33-1.783-.047-1.012-.056-1.316-.056-3.879 0-2.563.01-2.867.056-3.88.042-.935.199-1.443.33-1.782.174-.448.382-.768.718-1.104a2.974 2.974 0 0 1 1.104-.718c.338-.131.847-.288 1.783-.33C9.133 4.14 9.437 4.13 12 4.13Zm0 11.07a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4Zm0-8.13a4.93 4.93 0 1 0 0 9.86 4.93 4.93 0 0 0 0-9.86Zm6.276-.194a1.152 1.152 0 1 1-2.304 0 1.152 1.152 0 0 1 2.304 0Z" fill="white">
+                    </path>
+                  </svg> 
+                </a>    
+            </div>
+        </footer>
+        <script>$(document).ready(function () {
+            // Data for autocomplete
+            const suggestions = [
+                "Cendol Biasa",
+                "Cendol Kacang",
+                "Cendol Cincau",
+                "Cendol Pulut",
+                "Cendol Jagung",
+                "Cendol Mangga",
+                "Add On",
+                "Ais Kepal Myvic",
+                "Lay Chee Kang",
+                "ABC",
+                "Laksa Biasa",
+                "Laksa Telur Sarang",
+                "Bihun Sup Biasa",
+                "Bihun Sup Meatball",
+                "Mee Kari Biasa",
+                "Mee Kari Ayam",
+                "Mee Kari Kerang"
+            ];
+
+            // jQuery UI autocomplete
+            $("#searchBar").autocomplete({
+                source: suggestions
+            });
+        });
+
+        function handleSearch(event) {
+      event.preventDefault(); // Prevent page reload
+
+      const searchTerm = document.getElementById("searchBar").value.trim().toLowerCase();
+
+      // Check if the search term matches 'cendol biasa'
+      if (  searchTerm == "cendol" || 
+            searchTerm == "cendol biasa" || 
+            searchTerm == "cendol kacang" || 
+            searchTerm == "cendol cincau" || 
+            searchTerm == "cendol pulut" || 
+            searchTerm == "cendol jagung" ||
+            searchTerm == "cendol mangga") {
+        // Redirect to the Cendol page
+        window.location.href = "/Projek/menupage/cendol.html"; // Change to the actual Cendol page URL
+      }
+      else if ( searchTerm == "ais kepal myvic" ||
+                searchTerm == "ais kepal" ||
+                searchTerm == "lay chee kang" ||
+                searchTerm == "abc"
+      )
+      {
+        window.location.href = "/Projek/menupage/aiskepal.html"; // Change to the actual Cendol page URL
+      }
+      else if ( searchTerm == "laksa biasa" ||
+                searchTerm == "laksa telur sarang"||
+                searchTerm == "laksa"
+      )
+      {
+        window.location.href = "/Projek/menupage/laksa.html"; // Change to the actual Cendol page URL
+      } 
+      else if ( searchTerm == "bihun sup biasa" ||
+                searchTerm == "bihun sup" ||
+                searchTerm == "bihun" ||
+                searchTerm == "bihun sup meatball"
+      )
+      {
+        window.location.href = "/Projek/menupage/sup.html"; // Change to the actual Cendol page URL
+      } 
+      else if ( searchTerm == "mee kari biasa" ||
+                searchTerm == "mee kari" ||
+                searchTerm == "mee" ||
+                searchTerm == "mee kari ayam" ||
+                searchTerm == "mee kari kerang"
+      )
+      {
+        window.location.href = "/Projek/menupage/mee.html"; // Change to the actual Cendol page URL
+      } 
+      else {
+        alert("Item not found. Please try another search term.");
+      }
+    }</script>
+</body>
+</html>

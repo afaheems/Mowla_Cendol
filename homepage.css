@@ -1,0 +1,215 @@
+body {
+    font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('background.png');
+      background-color: #FFFBCA;
+      color: #000000;
+      opacity: 0.88;
+        font-family: "Overpass", sans-serif;
+        font-weight: 400;
+        background-size: cover;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff7e8;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0; /* Make the navbar stick to the top of the page */
+    z-index: 1000; /* Ensure the navbar stays on top of other content */
+}
+.navbar .logo img {
+    height: 40px;
+}
+.navbar .search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+}
+.navbar .search-bar input {
+    width: 300px; 
+    height: 35px; 
+    padding: 5px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px; 
+    font-size: 14px;
+    outline: none;
+}
+.navbar .menu-links {
+    display: flex;
+    gap: 15px;
+}
+.navbar .menu-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.navbar .menu-links a:hover {
+    background-color: #f0f0f0;
+}
+.navbar .cart-button {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.navbar .cart-button:hover {
+    background-color: #555;
+}
+
+.logobesar {
+    position: relative; /* Ensure the section is positioned relative for child elements */
+    text-align: center; /* Centers any text content inside the hero */
+    height: auto; /* Allows the container to adjust height based on content or image */
+    width: 100%; /* Ensure the container spans the full width */
+}
+
+.logobesar img {
+    width: 100%; /* Stretch the image to fill the width of its container */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: cover; /* Ensures the image fills its container without distortion */
+    display: block; /* Removes any inline spacing around the image */
+    background-repeat: no-repeat; /* Prevents tiling of the image */
+    background-position: center; /* Centers the image */
+}
+
+.logobesar button {
+    position: absolute; /* Position inside the hero section */
+    top: 79%; /* Centers vertically */
+    left: 40%; /* Move the button left */
+     /*background-color: #ff6f61; Button background color */
+    color: #ffffff; /* Button text color */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add padding for a better look */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor for better UX */
+    font-size: 18px; /* Adjust text size */
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+
+
+.logobesar button:hover {
+    background-color: #e65c50; /* Slightly darker shade on hover */
+}
+
+.featured-products {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-behavior: smooth;
+    border: 2px solid #FFFBCA; /* Adds a light gray border */
+    padding: 10px; /* Adds padding inside the border */
+    border-radius: 8px; /* Optional: Rounds the corners of the border */
+    margin: 20px 0; /* Adds margin above and below the carousel */
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.product {
+    min-width: 250px;
+    flex-shrink: 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product p {
+    color: #666;
+}
+
+.carousel-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carousel-buttons button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    margin: 0 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.product img {
+    width: 200px; /* Set the width of the images */
+    height: 150px; /* Set the height of the images */
+    object-fit: cover; /* Ensures the image fits without stretching */
+    border-radius: 8px; /* Optional: adds rounded corners */
+}
+footer {
+    background-color: #2E2F35;
+    padding: auto;
+    color: #F9F7F3;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.ui-autocomplete {
+    background-color: #f8f9fa; /* Background color */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    border: 1px solid #ddd; /* Light border */
+    max-height: 100px; /* Limit height */
+    max-width: 350px;
+    overflow-y: auto; /* Scroll if the list is too long */
+}
+
+.ui-menu-item {
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.ui-menu-item:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.ui-autocomplete li {
+    list-style: none;
+}
+
+.ui-autocomplete {
+    z-index: 1000 !important;
+}

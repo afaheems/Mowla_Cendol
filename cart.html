@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart.css">
+    <script defer src="cart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+        <img src="https://www.shutterstock.com/image-vector/ais-kacang-bean-ice-flat-600nw-2224640565.jpg" alt="Logo">
+        </div>
+        <form class="search-bar" id="searchForm" onsubmit="handleSearch(event)">
+            <input type="text" id="searchBar" class="form-control" placeholder="Search your favourite meal here!" autocomplete="off">
+            <img src="/Projek/cartpage/salam.png" alt="Salam Image" style="display: flex; margin: 0 auto; width: 200px; height: auto;">
+      </form>
+        <div class="menu-links">
+        <a href="/Projek/homepage/HomePageMowlaCendol.html">Home</a>
+        <a href="/Projek/aboutpage/aboutpage.html">About</a>
+        <a href="/Projek/menupage/menupage.html">Menu</a>
+        <a href="/Projek/contactpage/contactpage.html">Contact</a>
+        </div>
+        <a href="/Projek/cartpage/cart.html" class="cart-button">Your Cart</a>
+    </div>
+
+    <main>
+        <div class="progress-bar">
+            <span class="step active">1. Cart</span>
+            <span class="step">2. Check Out</span>
+        </div>
+
+        <section class="cart-section">
+            <div class="shopping-cart" id="cart-item">
+                <h2>Shopping Cart</h2>
+                <!-- Cart items will be inserted here dynamically -->
+            </div>
+
+            <div class="summary">
+                <h2>Summary</h2>
+                <p class="total">TOTAL: <span id="total">RM 0.00</span></p>
+            </div>
+        </section>
+
+        <div class="buttons">
+            <button id="next">Next</button>
+            <button id="cancel">Cancel</button>
+        </div>
+    </main>
+    <script>
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
+const totalElement = document.getElementById('total');
+const couponInput = document.getElementById('coupon');
+
+let total = 0;
+
+// Calculate and update total
+function updateTotal() {
+    total = cart.reduce((sum, item) => sum + parseFloat(item.price), 0); // Calculate total
+    totalElement.textContent = `RM ${total.toFixed(2)}`; // Update total in the UI
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderCart(); // Render the cart on page load
+});
+
+function renderCart() {
+            const cartContainer = document.querySelector('.shopping-cart');
+            cartContainer.innerHTML = ''; // Clear current cart items
+    
+            // Render each item in the cart
+            cart.forEach((item, index) => {
+                const cartItemHTML = `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="item-details">
+                            <p class="item-name">${item.name}</p>
+                            <p class="item-price">RM ${parseFloat(item.price).toFixed(2)}</p>
+                            <label>
+                                <input type="number" value="${item.quantity}" class="quantity" min="1"> pcs
+                            </label>
+                            <button class="delete-item" data-index="${index}">Delete</button>
+                        </div>
+                    </div>`;
+                cartContainer.insertAdjacentHTML('beforeend', cartItemHTML);
+            });
+    
+            // Re-attach event listeners to delete buttons
+            document.querySelectorAll('.delete-item').forEach(button => {
+                button.addEventListener('click', () => {
+                    const index = button.dataset.index; // Get the correct index
+                    cart.splice(index, 1); // Remove the specific item
+                    localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
+                    renderCart(); // Re-render the cart
+                });
+            });
+    
+            // Update subtotal and total
+            updateTotal();
+        }
+$(document).ready(function () {
+                // Data for autocomplete
+                const suggestions = [
+                    "Cendol Biasa",
+                    "Cendol Kacang",
+                    "Cendol Cincau",
+                    "Cendol Pulut",
+                    "Cendol Jagung",
+                    "Cendol Mangga",
+                    "Add On",
+                    "Ais Kepal Myvic",
+                    "Lay Chee Kang",
+                    "ABC",
+                    "Laksa Biasa",
+                    "Laksa Telur Sarang",
+                    "Bihun Sup Biasa",
+                    "Bihun Sup Meatball",
+                    "Mee Kari Biasa",
+                    "Mee Kari Ayam",
+                    "Mee Kari Kerang"
+                ];
+    
+                // jQuery UI autocomplete
+                $("#searchBar").autocomplete({
+                    source: suggestions
+                });
+            });
+    
+            function handleSearch(event) {
+          event.preventDefault(); // Prevent page reload
+    
+          const searchTerm = document.getElementById("searchBar").value.trim().toLowerCase();
+    
+          // Check if the search term matches 'cendol biasa'
+          if (  searchTerm == "cendol" || 
+                searchTerm == "cendol biasa" || 
+                searchTerm == "cendol kacang" || 
+                searchTerm == "cendol cincau" || 
+                searchTerm == "cendol pulut" || 
+                searchTerm == "cendol jagung" ||
+                searchTerm == "cendol mangga") {
+            // Redirect to the Cendol page
+            window.location.href = "/Projek/menupage/cendol.html"; // Change to the actual Cendol page URL
+          }
+          else if ( searchTerm == "ais kepal myvic" ||
+                    searchTerm == "ais kepal" ||
+                    searchTerm == "lay chee kang" ||
+                    searchTerm == "abc"
+          )
+          {
+            window.location.href = "/Projek/menupage/aiskepal.html"; // Change to the actual Cendol page URL
+          }
+          else if ( searchTerm == "laksa biasa" ||
+                    searchTerm == "laksa telur sarang"||
+                    searchTerm == "laksa"
+          )
+          {
+            window.location.href = "/Projek/menupage/laksa.html"; // Change to the actual Cendol page URL
+          } 
+          else if ( searchTerm == "bihun sup biasa" ||
+                    searchTerm == "bihun sup" ||
+                    searchTerm == "bihun" ||
+                    searchTerm == "bihun sup meatball"
+          )
+          {
+            window.location.href = "/Projek/menupage/sup.html"; // Change to the actual Cendol page URL
+          } 
+          else if ( searchTerm == "mee kari biasa" ||
+                    searchTerm == "mee kari" ||
+                    searchTerm == "mee" ||
+                    searchTerm == "mee kari ayam" ||
+                    searchTerm == "mee kari kerang"
+          )
+          {
+            window.location.href = "/Projek/menupage/mee.html"; // Change to the actual Cendol page URL
+          } 
+          else {
+            alert("Item not found. Please try another search term.");
+          }
+        }
+    </script>
+</body>
+</html>
