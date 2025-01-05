@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="loginsignin.css">
+    <script defer src="loginsignin.js"></script>
+</head>
+
+<body>
+    <div class="container" id="login-container">
+        <h1>Hi, Welcome to Mowla Cendol Website</h1>
+        <h1>Login</h1>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="email@address.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-actions">
+                <a href="#">Forgot password?</a>
+            </div>
+            <button type="submit">Login</button>
+            
+        </form>
+        <div class="footer">
+            Don't have an account? <a href="#" id="go-to-signup">Sign up here</a>
+        </div>
+    </div>
+
+    <div class="container" id="signup-container" style="display: none;">
+        <h1>Create Your Account</h1>
+        <form id="signup-form">
+            <div class="form-group">
+                <label for="signup-email">Email address</label>
+                <input type="email" id="signup-email" name="email" placeholder="email@address.com" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit">Create Account</button>
+        </form>
+        <div class="footer">
+            Already have an account? <a href="#" id="go-to-login">Log in here</a>
+        </div>
+    </div>
+
+</body>
+</html>
