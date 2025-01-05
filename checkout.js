@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const cancelButton = document.getElementById("cancel");
 
     payNowButton.addEventListener("click", () => {
-        window.location.href = "/Projek/homepage/HomePageMowlaCendol.html";
+        window.location.href = "HomePageMowlaCendol.html";
     });
 
     cancelButton.addEventListener("click", () => {
-        window.location.href = "/Projek/menupage/menupage.html";
+        window.location.href = "menupage.html";
     });
 });
 
