@@ -18,77 +18,44 @@
 
      <!-- Include jQuery UI (for autocomplete functionality) -->
      <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <!-- Bootstrap CSS -->
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery UI CSS -->
+     <link href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" rel="stylesheet">
+
      
     <style>
         body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #FFFBCA;
-      background-image: url('//insidescoop.com.my/cdn/shop/files/Curve_1.png?v=1721909851');
-      background-color: #FFFBCA;
-      color: #000000;
-      opacity: 0.88;
-        font-family: "Overpass", sans-serif;
-        font-weight: 400;
-        background-size: cover;
-    }
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #fff7e8;
-      padding: 10px 20px;
-      border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0; /* Make the navbar stick to the top of the page */
-      z-index: 1000; /* Ensure the navbar stays on top of other content */
-    }
-    .navbar .logo img {
-      height: 40px;
-    }
-    .navbar .search-bar {
-      flex-grow: 1;
-      margin: 0 20px;
-      display: flex;
-      align-items: center;
-    }
-    .navbar .search-bar input {
-      width: 300px; 
-      height: 35px; 
-      padding: 5px 15px;
-      border: 1px solid #ddd;
-      border-radius: 20px; 
-      font-size: 14px;
-      outline: none;
-    }
-    .navbar .menu-links {
-      display: flex;
-      gap: 15px;
-    }
-    .navbar .menu-links a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      padding: 5px 10px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-    .navbar .menu-links a:hover {
-      background-color: #f0f0f0;
-    }
-    .navbar .cart-button {
-      background-color: #333;
-      color: #fff;
-      padding: 5px 15px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-    .navbar .cart-button:hover {
-      background-color: #555;
-    }
+        font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #FFFBCA;
+          background-image: url('//insidescoop.com.my/cdn/shop/files/Curve_1.png?v=1721909851');
+          background-color: #FFFBCA;
+          color: #000000;
+          opacity: 0.88;
+          font-family: "Overpass", sans-serif;
+          font-weight: 400;
+          background-size: cover;
+        }
+        /* Additional Styles for Scroll to Top and Carousel */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #555;
+        }
+        
         footer {
             background-color: #2E2F35;
             padding: auto;
@@ -99,6 +66,9 @@
             margin-bottom: 10px;
             margin-right: 10px;
             margin-left: 10px;
+        }
+        footer p{
+            margin-top: 10px;
         }
         .menu {
             padding: 20px;
@@ -124,6 +94,7 @@
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
+            
         }
         .main-content {
             flex: 1;
@@ -131,14 +102,16 @@
             background-color: #FFFBCA;
             border: 2px solid #575757;
             border-radius: 25px;
+            margin-right: 50px;
         }
         .sidebar {
-            max-width: 45%;
+            max-width: 90%;
             background-color: #FFFBCA;
-            padding: 20px;
+            padding: auto;
             border: 2px solid #575757;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-left: 50px;
         }
         .main-content {
             max-width: 50%;
@@ -156,10 +129,15 @@
             font-size: 1.2em;
             color: #333;
             line-height: 1.5;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
         }
 
         .operation-hours p {
             margin: 5px 0;
+            text-align: left;
         }
 
         .operation-hours strong {
@@ -171,10 +149,22 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #fff7e8;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 999;
             padding: 10px 0;
+        }
+        /* Search button (optional) */
+        .header .search-container button {
+            background-color: #007BFF;
+            color: white;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .header .search-container button:hover {
+            background-color: #0056b3;
         }
         .containers {
             max-width: 1200px;
@@ -205,6 +195,16 @@
         h1, h2 {
             text-align: center;
         }
+        .menu p {
+            margin-left: 200px;
+            margin-right: 200px;
+            text-align: center;
+        }
+        .center p {
+            margin-left: 200px;
+            margin-right: 200px;
+            text-align: center;
+        }
         ul {
             list-style-type: none;
             padding: 0;
@@ -212,6 +212,8 @@
         ul li {
             margin-bottom: 10px;
         }
+
+
         .carousel {
             display: flex;
             overflow: hidden;
@@ -224,7 +226,45 @@
             width: 100%;
             height: 300px;
             object-fit: cover;
+            cursor: pointer;
         }
+        .carousel-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;  /* Ensure it appears on top of other elements */
+        }
+
+        .carousel-lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain; /* Make sure the image maintains aspect ratio */
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 10000;
+        }
+
+        .close-btn:hover {
+            background-color: #ddd;
+        }
+
+
         .testimonial {
             background-color: #F9F7F3;
             padding: 20px;
@@ -234,59 +274,143 @@
             max-width: 70%;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        /* jQuery UI Autocomplete Dropdown Styling */
+        .search-bar-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+        .search-bar-container input {
+            max-width: 400px;
+            border-radius: 15px;
+        }
         .ui-autocomplete {
-                background-color: #f8f9fa; /* Background color */
-                border-radius: 5px; /* Rounded corners */
-                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Drop shadow */
-                border: 1px solid #ddd; /* Light border */
-                max-height: 100px; /* Limit height */
-                max-width: 350px;
-                overflow-y: auto; /* Scroll if the list is too long */
-            }
+            z-index: 1000 !important;
+        }
+                
+        .navbar {
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 25px 0px 25px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Ensure spacing between elements */
+            background-color: #fff7e8;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .search-bar-container {
+            display: flex;
+            justify-content: center; /* Center the search bar */
+            align-items: center; /* Align items vertically */
+            flex-grow: 1; /* Allow the search bar to take up available space */
+            margin-left: 25px;
+        }
 
-            .ui-menu-item {
-                padding: 8px 15px;
-                font-size: 16px;
-                cursor: pointer;
-            }
+        .search-bar-container input {
+            max-width: 400px;
+            border-radius: 15px;
+            height: 35px; /* Adjust the height of the input */
+        }
 
-            .ui-menu-item:hover {
-                background-color: #007bff;
-                color: #fff;
-            }
+        .menu-links {
+            display: flex;
+            gap: 15px;
+        }
 
-            .ui-autocomplete li {
-                list-style: none;
-            }
+        .menu-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .navbar .logo img {
+            height: 40px;
+        }
+        .navbar .search-bar {
+            flex-grow: 1;
+            margin: 0 0px;
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+          
+        }
+        .navbar .search-bar input {
+            width: 300px; 
+            height: 35px; 
+            padding: 5px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px; 
+            font-size: 14px;
+            outline: none;
+        }
+        .navbar .menu-links {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar .menu-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .navbar .menu-links a:hover {
+            background-color: #f0f0f0;
+        }
+        .navbar .cart-button {
+            background-color: #333;
+            color: #fff;
+            padding: 5px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .navbar .cart-button:hover {
+            background-color: #555;
+        }
 
-            .ui-autocomplete {
-                z-index: 1000 !important;
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
             }
+            .sidebar, .main-content {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
-    <body>
+    <header class="headers">
         <div class="navbar">
-        <div class="logo">
-            <a href="HomePageMowlaCendol.html">
-                <img src="https://www.shutterstock.com/image-vector/ais-kacang-bean-ice-flat-600nw-2224640565.jpg" alt="Logo">
-              </a>
-        </div>
-        <form class="search-bar" id="searchForm" onsubmit="handleSearch(event)">
-            <input type="text" id="searchBar" class="form-control" placeholder="Search your favourite meal here!" autocomplete="off">
-            
-      </form>
+            <div class="logo">
+                <a href="HomePageMowlaCendol.html">
+                    <img src="https://www.shutterstock.com/image-vector/ais-kacang-bean-ice-flat-600nw-2224640565.jpg" alt="Logo">
+                </a>
+            </div>
 
-        <div class="menu-links">
-        <a href="HomePageMowlaCendol.html">Home</a>
-        <a href="aboutpage.html">About</a>
-        <a href="menupage.html">Menu</a>
-        <a href="contactpage.html">Contact</a>
+            <div class="search-bar-container">
+                <input type="text" id="searchBar" class="form-control" placeholder="Search your favourite meal here!">
+            </div>
+
+            <div class="menu-links">
+                <a href="HomePageMowlaCendol.html">Home</a>
+                <a href="aboutpage.html">About</a>
+                <a href="menupage.html">Menu</a>
+                <a href="contactpage.html">Contact</a>
+            </div>
+            <a href="cart.html" class="cart-button">Your Cart</a>
         </div>
-        <a href="cart.html" class="cart-button">Your Cart</a>
-    </div>
-    </body>
+    </header>
         
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -324,60 +448,34 @@
             $("#searchBar").autocomplete({
                 source: suggestions
             });
+             // Scroll-to-Top button functionality
+             $(window).scroll(function() {
+                if ($(this).scrollTop() > 200) {
+                    $('#scrollToTopBtn').fadeIn();
+                } else {
+                    $('#scrollToTopBtn').fadeOut();
+                }
+            });
+
+            $('#scrollToTopBtn').click(function() {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                return false;
+            });
+
+            // Lightbox for carousel images
+            $('.carousel img').click(function() {
+                const src = $(this).attr('src');
+                $('#lightboxImage').attr('src', src);
+                $('#lightbox').fadeIn();
+            });
+            $('#closeBtn').click(function() {
+                $('#lightbox').fadeOut(); // Hide the lightbox
+            });
+
+            $('#lightbox').click(function() {
+                $(this).fadeOut();
+            });
         });
-
-    function handleSearch(event) {
-      event.preventDefault(); // Prevent page reload
-
-      const searchTerm = document.getElementById("searchBar").value.trim().toLowerCase();
-
-      // Check if the search term matches 'cendol biasa'
-      if (  searchTerm == "cendol" || 
-            searchTerm == "cendol biasa" || 
-            searchTerm == "cendol kacang" || 
-            searchTerm == "cendol cincau" || 
-            searchTerm == "cendol pulut" || 
-            searchTerm == "cendol jagung" ||
-            searchTerm == "cendol mangga") {
-        // Redirect to the Cendol page
-        window.location.href = "cendol.html"; // Change to the actual Cendol page URL
-      }
-      else if ( searchTerm == "ais kepal myvic" ||
-                searchTerm == "ais kepal" ||
-                searchTerm == "lay chee kang" ||
-                searchTerm == "abc"
-      )
-      {
-        window.location.href = "aiskepal.html"; // Change to the actual Cendol page URL
-      }
-      else if ( searchTerm == "laksa biasa" ||
-                searchTerm == "laksa telur sarang"||
-                searchTerm == "laksa"
-      )
-      {
-        window.location.href = "laksa.html"; // Change to the actual Cendol page URL
-      } 
-      else if ( searchTerm == "bihun sup biasa" ||
-                searchTerm == "bihun sup" ||
-                searchTerm == "bihun" ||
-                searchTerm == "bihun sup meatball"
-      )
-      {
-        window.location.href = "sup.html"; // Change to the actual Cendol page URL
-      } 
-      else if ( searchTerm == "mee kari biasa" ||
-                searchTerm == "mee kari" ||
-                searchTerm == "mee" ||
-                searchTerm == "mee kari ayam" ||
-                searchTerm == "mee kari kerang"
-      )
-      {
-        window.location.href = "mee.html"; // Change to the actual Cendol page URL
-      } 
-      else {
-        alert("Item not found. Please try another search term.");
-      }
-    }
     </script>
     
     <div class="menu">
@@ -394,6 +492,14 @@
         <img src="https://www.ajinomotofoodbizpartner.com.my/wp-content/uploads/2023/09/Curry-Mee-thumbnail-03.jpg" alt="Curry Mee">
         <img src="https://images.deliveryhero.io/image/foodpanda/recipes/asam-laksa-recipe-1.jpg" alt="Asam Laksa">
     </div>
+     <!-- Scroll to Top Button -->
+     <button id="scrollToTopBtn">↑ Top</button>
+
+     <!-- Carousel Lightbox -->
+     <div class="carousel-lightbox" id="lightbox">
+         <img id="lightboxImage" src="" alt="Large view of image">
+     </div>
+ 
 
     <div class="our-story">
         <h2>Our Story</h2>
@@ -402,10 +508,46 @@
 
     <div class="container">
         <div class="sidebar">
-            <h2>Operation Hours</h2>
+            <h2>Our Operational Hours</h2>
             <div class="operation-hours">
-                <p><strong>Monday - Saturday:</strong> 1300hrs - 2200hrs</p>
-                <p><strong>Sunday:</strong> Closed</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Opening Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>1:00 PM - 10:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>1:00 PM - 10:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>1:00 PM - 10:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>1:00 PM - 10:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>1:00 PM - 10:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>1:00 PM - 10:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>Closed</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="main-content">
@@ -420,7 +562,7 @@
 
     <div class="testimonial">
         <h2>What Our Customers Say</h2>
-        <p>"The best cendol I've ever had! The flavors are amazing, and the staff is so friendly. Highly recommend!" - Danish M.</p>
+        <p>"The best cendol I've ever had! The flavors are amazing, and the staff is so friendly. Highly recommend!" - Haziq M.</p>
         <p>"A must-visit spot for anyone in Gombak. The desserts are heavenly!" - Faris L.</p>
     </div>
 
